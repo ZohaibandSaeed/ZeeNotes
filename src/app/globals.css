@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #4361ee;
+  --color-primary-hover: #3a56d4;
+  --color-bg: #f8f9fa;
+  --color-fg: #212529;
+  --color-card: #ffffff;
+  --color-border: #e9ecef;
+
+  /* Override zinc colors to create a warm brown/coffee dark theme */
+  --color-zinc-950: #2a1f1a;
+  --color-zinc-900: #382a23;
+  --color-zinc-800: #4c3a32;
+  --color-zinc-700: #665045;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.dark {
+  --color-bg: #121212;
+  --color-fg: #f8f9fa;
+  --color-card: #1e1e1e;
+  --color-border: #333333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbars completely but allow scrolling */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
